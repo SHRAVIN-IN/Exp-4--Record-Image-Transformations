@@ -75,19 +75,20 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load the image
-image = cv2.imread('spider.png')
+# Step 1: Load the image
+image = cv2.imread('vr.webp')
 
-# Display original image
+# Display the original image
 plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.title("Original Image")
 plt.axis('off')
 plt.show()
 
-# Image Translation
+# Step 2: Image Translation
 tx, ty = 100, 50
 M_translation = np.float32([[1, 0, tx],
                             [0, 1, ty]])
+
 translated_image = cv2.warpAffine(
     image, M_translation, (image.shape[1], image.shape[0])
 )
@@ -97,7 +98,7 @@ plt.title("Translated Image")
 plt.axis('off')
 plt.show()
 
-# Image Scaling
+# Step 3: Image Scaling
 fx, fy = 5.0, 2.0
 scaled_image = cv2.resize(
     image, None, fx=fx, fy=fy,
@@ -109,7 +110,7 @@ plt.title("Scaled Image")
 plt.axis('off')
 plt.show()
 
-# Image Shearing
+# Step 4: Image Shearing
 shear_matrix = np.float32([[1, 0.5, 0],
                            [0.5, 1, 0]])
 
@@ -122,7 +123,7 @@ plt.title("Sheared Image")
 plt.axis('off')
 plt.show()
 
-# Image Reflection
+# Step 5: Image Reflection
 reflected_image = cv2.flip(image, 2)
 
 plt.imshow(cv2.cvtColor(reflected_image, cv2.COLOR_BGR2RGB))
@@ -130,7 +131,7 @@ plt.title("Reflected Image")
 plt.axis('off')
 plt.show()
 
-# Image Rotation
+# Step 6: Image Rotation
 (height, width) = image.shape[:2]
 angle = 45
 center = (width // 2, height // 2)
@@ -145,7 +146,7 @@ plt.title("Rotated Image")
 plt.axis('off')
 plt.show()
 
-# Image Cropping
+# Step 7: Image Cropping
 x, y, w, h = 100, 100, 200, 150
 cropped_image = image[y:y+h, x:x+w]
 
@@ -163,15 +164,18 @@ plt.show()
 ---
 
 ##  Output
-<img width="512" height="409" alt="9fe058d0-00d7-4f97-9de0-245876085626" src="https://github.com/user-attachments/assets/bbfcccef-facc-46f2-b4c7-a1878dac5776" />
-<img width="515" height="370" alt="bf79a143-2223-452d-b9ea-51560b1885b7" src="https://github.com/user-attachments/assets/be5c383a-dc6a-4fa3-b817-f455d39b1889" />
-<img width="515" height="370" alt="bee1b9f2-a38a-4c1d-bcaf-5135a08991d9" src="https://github.com/user-attachments/assets/7ff2d806-2b12-429a-a3f5-f4ff15c42c61" />
-<img width="515" height="370" alt="935426fc-8c7f-4c81-ae88-8588d1821406" src="https://github.com/user-attachments/assets/cdb178fa-8993-41d4-a853-2c0a0a9021cd" />
-<img width="515" height="172" alt="04c168b2-84d6-40be-bfef-6b9a3a52ed22" src="https://github.com/user-attachments/assets/533d4220-3b77-4ffc-aa87-7c5651018127" />
-<img width="515" height="370" alt="8590b3fd-184a-45d0-9ea2-9f909e9760d8" src="https://github.com/user-attachments/assets/c8f9eada-dd63-410f-a9f5-26c81f31603d" />
-<img width="515" height="370" alt="73ee21e2-e7fa-4e30-b243-e95b8106437c" src="https://github.com/user-attachments/assets/2f920c44-f12d-45b5-9c21-4517707f97b1" />
+<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/6a8e42e8-5905-4b6b-94fa-18caf5f4d961" />
+<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/373ba5fe-63e1-4be1-9a0e-9196163df7a9" />
+<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/666326ea-bd3a-45a2-ac3d-07ff33fef537" />
+<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/960d33e3-eab9-44cf-88a4-717ef795a038" />
+<img width="512" height="410" alt="download" src="https://github.com/user-attachments/assets/530a18bc-fb83-472d-9431-2d69d3dc752c" />
+<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/c91a6d34-4d85-41f8-b3cd-adfe57bbec21" />
+
 
 ### Image Translation
+
+
+
 - Original image is displayed  
 - Translated image (shifted right and down) is displayed  
 
