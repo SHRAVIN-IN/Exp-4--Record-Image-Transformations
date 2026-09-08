@@ -1,4 +1,4 @@
-# Geometric Transformations Using OpenCV
+# Exp 4 - Geometric Transformations Using OpenCV
 
 ---
 
@@ -70,124 +70,43 @@ Read the input image in color mode.
 ---
 
 ##  Program
-```
-import cv2
-import numpy as np
-import matplotlib.pyplot as plt
 
-# Step 1: Load the image
-image = cv2.imread('vr.webp')
+### Developed By:JANA SHRAVIN S
 
-# Display the original image
-plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-plt.title("Original Image")
-plt.axis('off')
-plt.show()
-
-# Step 2: Image Translation
-tx, ty = 100, 50
-M_translation = np.float32([[1, 0, tx],
-                            [0, 1, ty]])
-
-translated_image = cv2.warpAffine(
-    image, M_translation, (image.shape[1], image.shape[0])
-)
-
-plt.imshow(cv2.cvtColor(translated_image, cv2.COLOR_BGR2RGB))
-plt.title("Translated Image")
-plt.axis('off')
-plt.show()
-
-# Step 3: Image Scaling
-fx, fy = 5.0, 2.0
-scaled_image = cv2.resize(
-    image, None, fx=fx, fy=fy,
-    interpolation=cv2.INTER_LINEAR
-)
-
-plt.imshow(cv2.cvtColor(scaled_image, cv2.COLOR_BGR2RGB))
-plt.title("Scaled Image")
-plt.axis('off')
-plt.show()
-
-# Step 4: Image Shearing
-shear_matrix = np.float32([[1, 0.5, 0],
-                           [0.5, 1, 0]])
-
-sheared_image = cv2.warpAffine(
-    image, shear_matrix, (image.shape[1], image.shape[0])
-)
-
-plt.imshow(cv2.cvtColor(sheared_image, cv2.COLOR_BGR2RGB))
-plt.title("Sheared Image")
-plt.axis('off')
-plt.show()
-
-# Step 5: Image Reflection
-reflected_image = cv2.flip(image, 2)
-
-plt.imshow(cv2.cvtColor(reflected_image, cv2.COLOR_BGR2RGB))
-plt.title("Reflected Image")
-plt.axis('off')
-plt.show()
-
-# Step 6: Image Rotation
-(height, width) = image.shape[:2]
-angle = 45
-center = (width // 2, height // 2)
-
-M_rotation = cv2.getRotationMatrix2D(center, angle, 1)
-rotated_image = cv2.warpAffine(
-    image, M_rotation, (width, height)
-)
-
-plt.imshow(cv2.cvtColor(rotated_image, cv2.COLOR_BGR2RGB))
-plt.title("Rotated Image")
-plt.axis('off')
-plt.show()
-
-# Step 7: Image Cropping
-x, y, w, h = 100, 100, 200, 150
-cropped_image = image[y:y+h, x:x+w]
-
-plt.imshow(cv2.cvtColor(cropped_image, cv2.COLOR_BGR2RGB))
-plt.title("Cropped Image")
-plt.axis('off')
-plt.show()
-```
-### Developed By:
-**Name:** S. Jana Shravin
-
-### Register No:
-212224243003  
+### Register No: 212224243003
 
 ---
 
 ##  Output
-<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/6a8e42e8-5905-4b6b-94fa-18caf5f4d961" />
-<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/373ba5fe-63e1-4be1-9a0e-9196163df7a9" />
-<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/666326ea-bd3a-45a2-ac3d-07ff33fef537" />
-<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/960d33e3-eab9-44cf-88a4-717ef795a038" />
-<img width="512" height="410" alt="download" src="https://github.com/user-attachments/assets/530a18bc-fb83-472d-9431-2d69d3dc752c" />
-<img width="516" height="320" alt="download" src="https://github.com/user-attachments/assets/c91a6d34-4d85-41f8-b3cd-adfe57bbec21" />
-
 
 ### Image Translation
-
-
-
 - Original image is displayed  
 - Translated image (shifted right and down) is displayed  
+  <img width="628" height="353" alt="Screenshot 2026-08-20 112144" src="https://github.com/user-attachments/assets/61bd9886-3e8b-421c-93cf-cd4a291115b0" />
+
+
+
+
 
 ### Image Scaling
 - Original image is displayed  
 - Downscaled image (0.5×) is displayed  
 - Upscaled image (2×) is displayed  
 
+
+<img width="629" height="385" alt="Screenshot 2026-08-20 112249" src="https://github.com/user-attachments/assets/4a01f0a3-953f-480b-9acb-0dbf225f7e48" />
+
+
+
 ### Image Shearing
 - Original image is displayed  
 - Horizontally sheared image is displayed  
 - Vertically sheared image is displayed  
+
+<img width="622" height="198" alt="Screenshot 2026-08-20 112359" src="https://github.com/user-attachments/assets/f6005826-57ba-4cb2-9947-aa00024fdbf6" />
+
+
+
 
 ### Image Reflection
 - Original image is displayed  
@@ -195,10 +114,19 @@ plt.show()
 - Vertically flipped image is displayed  
 - Both-axis flipped image is displayed  
 
+<img width="631" height="392" alt="Screenshot 2026-08-20 112513" src="https://github.com/user-attachments/assets/2189c057-7b16-4960-b5bb-c49f205252b5" />
+
+
+
+
 ### Image Rotation
 - Original image is displayed  
 - 45° rotated image is displayed  
 - 90° rotated image is displayed  
+<img width="674" height="397" alt="Screenshot 2026-08-20 112601" src="https://github.com/user-attachments/assets/d897eb63-0845-443d-a991-0d84613ecbfd" />
+
+
+
 
 ---
 
